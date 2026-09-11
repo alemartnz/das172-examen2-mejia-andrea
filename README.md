@@ -1,37 +1,27 @@
 # AeroCargo-Matrix
 
-**Universidad Don Bosco — Facultad de Aeronáutica**
-**Asignatura:** DAS172 — Desarrollo de Algoritmos para la Simulación de Sistemas
-**Evaluación:** EVA106 — Examen Teórico Unidad II: Funciones y Arreglos
-**Reto:** Auditoría y Balance Matricial de Distribución de Carga en Bahía de Aeronave
+Universidad Don Bosco — Facultad de Aeronáutica
 
+Asignatura:DAS172 — Desarrollo de Algoritmos para la Simulación de Sistemas
+
+Evaluación: EVA106 — Examen Teórico Unidad II: Funciones y Arreglos
+
+Reto: Auditoría y Balance Matricial de Distribución de Carga en Bahía de Aeronave
+
+Nombre: Andrea Alejandra Mejia Martinez-MM210136
 ---
 
 ## 1. Explicación del Problema
 
-La distribución del peso dentro de la bodega de carga (*cargo hold*) de una
-aeronave no es un detalle logístico menor: es una condición operativa y de
-seguridad. El piso de carga se modela como una cuadrícula de **N filas
-(dirección longitudinal, de proa a popa) por M columnas (dirección
-transversal, de babor a estribor)**, donde cada celda representa un
-compartimiento de estibado con un peso real colocado y una capacidad máxima
-estructural.
+En la aviación de carga, la forma en que se distribuye el peso dentro de la bodega de una aeronave no es un detalle secundario: incide directamente en la seguridad del vuelo. El piso de la bahía de carga se representa como una cuadrícula de N filas por M columnas, donde cada celda equivale a un compartimiento con un peso real depositado y un límite estructural que no debe sobrepasarse.
 
-Dos condiciones deben cumplirse simultáneamente en cada vuelo:
+Existen dos riesgos principales que este proyecto busca controlar mediante análisis matricial:
 
-1. **Capacidad estructural del piso.** Ninguna celda puede exceder el peso
-   máximo que su sección del fuselaje puede soportar. Superarlo (>100% de
-   ocupación) compromete la integridad estructural de esa zona.
-2. **Balance y simetría.** El peso debe repartirse de forma equilibrada
-   entre el lado izquierdo y el derecho de la aeronave. Un desbalance
-   lateral excesivo desplaza el centro de gravedad lateral, afectando la
-   maniobrabilidad y estabilidad en vuelo.
+Por un lado, la resistencia estructural: cada sección del piso soporta un peso máximo definido por el fabricante, y sobrepasarlo en cualquier celda puede debilitar el fuselaje en esa zona, incluso si el peso total de la aeronave está dentro de lo permitido.
 
-Este proyecto automatiza esa auditoría: valida los datos de entrada,
-calcula el porcentaje de ocupación de cada celda, detecta sobrecargas,
-evalúa el balance lateral (respetando la regla de la columna central en
-matrices de M impar) y localiza la subzona de mayor concentración crítica
-dentro de la bodega mediante una ventana deslizante k×p.
+Por otro lado, el equilibrio de la aeronave: el peso debe repartirse de manera simétrica entre el lado izquierdo y el derecho. Un desbalance lateral significativo desplaza el centro de gravedad transversal, afectando la estabilidad y la capacidad de maniobra durante el vuelo.
+
+AeroCargo-Matrix automatiza esta verificación: valida que los datos de entrada sean consistentes, calcula el porcentaje de ocupación de cada compartimiento para detectar sobrecargas puntuales, evalúa el balance lateral considerando si el número de columnas es par o impar, y localiza la subzona de la bodega con mayor concentración de riesgo mediante una ventana de búsqueda deslizante.
 
 ---
 
