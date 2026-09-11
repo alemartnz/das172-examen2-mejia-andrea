@@ -105,30 +105,6 @@ correspondiente a la submatriz que se retorna.
 
 ---
 
-## 4. Estructura del Repositorio
-
-```
-das172-examen2-apellido-nombre/
-├── src/
-│   ├── __init__.py
-│   └── aerocargo.py        # Los 4 módulos puros requeridos
-├── tests/
-│   └── test_aerocargo.py   # Casos típicos y de borde
-├── main.py                 # Script principal con datos de prueba
-├── README.md
-└── .gitignore
-```
-
-## 5. Ejecución
-
-```bash
-# Ejecutar el flujo completo de demostración
-python main.py
-
-# Ejecutar las pruebas unitarias
-python -m unittest discover tests
-```
-
 ## 6. Casos de Borde Contemplados
 
 - Matrices mínimas de 2×2.
